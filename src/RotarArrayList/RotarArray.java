@@ -1,3 +1,5 @@
+package RotarArrayList;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
