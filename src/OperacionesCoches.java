@@ -13,8 +13,10 @@ public class OperacionesCoches {
     public void altaCoches(){
         boolean continuar=true;
         int posicionListaCoches=listaCoches.lastIndexOf(listaCoches)+1;
+        String control;
 
         while (continuar) {
+
             System.out.println("Coche " + posicionListaCoches);
             System.out.print("Matrícula: ");
             this.matricula = this.entradaTeclado.nextLine();
@@ -26,15 +28,13 @@ public class OperacionesCoches {
             this.kilometros = this.entradaTeclado.nextInt();
             this.entradaTeclado.nextLine();
             Coche nuevoCoche = new Coche(this.matricula, this.marca, this.modelo, this.kilometros);
-            listaCoches.add(nuevoCoche);
+            listaCoches.add(posicionListaCoches,nuevoCoche);
 
             System.out.println("¿Desea dar de alta un coche?[s/n]");
-            if (this.entradaTeclado.nextLine() == "s") {
-                posicionListaCoches++;
-                }
-            else{
+            control=this.entradaTeclado.nextLine();
+            if (control.equalsIgnoreCase("n")) {
                 continuar = false;
-            }
+            }else posicionListaCoches++;
         }
     }
 
