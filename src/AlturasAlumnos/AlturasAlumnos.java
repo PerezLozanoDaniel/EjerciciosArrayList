@@ -1,3 +1,5 @@
+package AlturasAlumnos;
+
 import java.util.*;
 
 
@@ -20,7 +22,7 @@ public class AlturasAlumnos {
 
     public void addAltura() {
 
-        int posicionAlumno = 1;
+        int posicionAlumno = 0;
         double altura;
 
         while (posicionAlumno < this.alumnos) {
@@ -41,6 +43,7 @@ public class AlturasAlumnos {
         for (Double cadaAlumno : this.alturaAlumnos) {
             mediaDeAltura = mediaDeAltura + cadaAlumno;
         }
+        mediaDeAltura=mediaDeAltura/this.alumnos;
         for (Double cadaAlumno : this.alturaAlumnos) {
             if (cadaAlumno < mediaDeAltura){
                 alumnosPorDebajoMedia++;

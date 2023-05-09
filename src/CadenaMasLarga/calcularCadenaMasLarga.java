@@ -11,7 +11,7 @@ public class calcularCadenaMasLarga {
 
     public void llenarArray() {
         String cadena;
-        Boolean continuar = true;
+        boolean continuar = true;
 
         while (continuar) {
             System.out.print("\nIntrocuce introduce una cadena de caracteres, escribe [fin] para finalizar: ");
@@ -28,6 +28,7 @@ public class calcularCadenaMasLarga {
             for (int contadorArray=1; contadorArray<arrayCadenas.size(); contadorArray++) {
                 if (arrayCadenas.get(contadorArray).length() > masLarga.length()) masLarga = arrayCadenas.get(contadorArray);
             }
+            System.out.println("\nLa caden más larga es: "+masLarga);
         }
 
 

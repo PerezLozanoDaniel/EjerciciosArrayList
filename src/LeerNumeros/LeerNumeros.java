@@ -12,10 +12,16 @@ public class LeerNumeros {
     Scanner entradaTeclado = new Scanner(System.in);
 
     public void introducirNumeros(){
+        boolean valorControl=true;
+        int numeroIntroducido;
 
-        while (this.entradaTeclado.nextInt()!=-99)
+        while (valorControl) {
             System.out.print("\nIntroduce entero. -99 para acabar: \n");
-            this.listaNumeros.add(this.entradaTeclado.nextInt());
+            numeroIntroducido = this.entradaTeclado.nextInt();
+            if (numeroIntroducido != -99) {
+                this.listaNumeros.add(numeroIntroducido);
+            } else valorControl = false;
+        }
     }
 
     public void sumaNumeros (){
@@ -26,8 +32,9 @@ public class LeerNumeros {
 
     public void resultados(){
         int numerosPorEncimaMedia=0;
+        this.media = this.suma / this.listaNumeros.size();
 
-        for(Integer numero :listaNumeros){
+        for(Integer numero : this.listaNumeros){
             if (numero>this.media) numerosPorEncimaMedia++;
         }
 
