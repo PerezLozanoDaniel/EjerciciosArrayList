@@ -1,5 +1,5 @@
 package ArrayListVehiculosTransporte;
 
 public enum TipoVehiculoTransporte {
-    moto, coche, camion;
+    moto, coche, camion
 }
