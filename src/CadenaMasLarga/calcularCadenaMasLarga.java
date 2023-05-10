@@ -14,7 +14,7 @@ public class calcularCadenaMasLarga {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.print("\nIntrocuce introduce una cadena de caracteres, escribe [fin] para finalizar: ");
+            System.out.print("\nIntrocuce una cadena de caracteres, escribe [fin] para finalizar: ");
             cadena = this.entradaTeclado.nextLine();
             if (cadena.equalsIgnoreCase("fin")) continuar = false;
             else arrayCadenas.add(cadena);
