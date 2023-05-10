@@ -1,15 +1,15 @@
-package ArrayListVehiculos;
+package ArrayListVehiculosTransporte;
 
-public class Vehiculo implements InterfaceVehiculo {
+public class VehiculoTransporte implements ITransportador {
     private String matricula;
     private String marca;
     private String modelo;
     private int kilometros;
     private int numeroRuedas;
-    TipoVehiculo tipoVehiculo;
+    TipoVehiculoTransporte tipoVehiculoTransporte;
     StringBuilder constructorCadena = new StringBuilder();
 
-    public Vehiculo(String matricula, String marca, String modelo, int kilometros, int numeroRuedas) {
+    public VehiculoTransporte(String matricula, String marca, String modelo, int kilometros, int numeroRuedas) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
@@ -17,36 +17,13 @@ public class Vehiculo implements InterfaceVehiculo {
         this.numeroRuedas = numeroRuedas;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
+    @Override
     public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+        return this.marca;
     }
 
     public int getKilometros() {
         return kilometros;
-    }
-
-    public void setKilometros(int kilometros) {
-        this.kilometros = kilometros;
     }
 
     @Override
@@ -61,29 +38,19 @@ public class Vehiculo implements InterfaceVehiculo {
         this.constructorCadena.append(kilometros);
         switch (this.numeroRuedas) {
             case 2:
-                this.tipoVehiculo = TipoVehiculo.moto;
+                this.tipoVehiculoTransporte = TipoVehiculoTransporte.moto;
                 break;
             case 4:
-                this.tipoVehiculo = TipoVehiculo.coche;
+                this.tipoVehiculoTransporte = TipoVehiculoTransporte.coche;
                 break;
             case 6:
-                this.tipoVehiculo = TipoVehiculo.camion;
+                this.tipoVehiculoTransporte = TipoVehiculoTransporte.camion;
                 break;
             default:
                 break;
         }
         this.constructorCadena.append("\nTipo de vehiculo: ");
-        this.constructorCadena.append(tipoVehiculo);
+        this.constructorCadena.append(tipoVehiculoTransporte);
         return this.constructorCadena.toString();
     }
-
-    @Override
-    public int getNumeroRuedas() {
-        return this.numeroRuedas;
-    }
-
-    public void setNumeroRuedas(int numeroRuedas) {
-        this.numeroRuedas = numeroRuedas;
-    }
-
 }

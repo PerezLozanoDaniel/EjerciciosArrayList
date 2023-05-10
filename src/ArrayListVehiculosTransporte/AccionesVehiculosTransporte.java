@@ -1,18 +1,18 @@
-package ArrayListVehiculos;
+package ArrayListVehiculosTransporte;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AccionesVehiculos {
+public class AccionesVehiculosTransporte {
     private String matricula;
     private String marca;
     private String modelo;
     private int kilometros;
     private int numeroRuedas;
 
-    ArrayList<InterfaceVehiculo> listaVehiculos = new ArrayList<>();
+    ArrayList<ITransportador> listaVehiculos = new ArrayList<>();
     Scanner entradaTeclado = new Scanner(System.in);
-    InterfaceVehiculo nuevoVehiculo;
+    ITransportador nuevoVehiculo;
 
 
     public void altaVehiculo() {
@@ -86,8 +86,8 @@ public class AccionesVehiculos {
             }
         }
 
-        public InterfaceVehiculo conMasKm () {
-            InterfaceVehiculo masKilometros = this.listaVehiculos.get(0);
+        public ITransportador conMasKm () {
+            ITransportador masKilometros = this.listaVehiculos.get(0);
             for (int i = 0; i < this.listaVehiculos.size(); i++) {
                 if (this.listaVehiculos.get(i).getKilometros() > masKilometros.getKilometros())
                     masKilometros = this.listaVehiculos.get(i);
@@ -97,7 +97,7 @@ public class AccionesVehiculos {
 
         public void mostrarOrdenadosPorKmMenorAMayor () {
             int i, j;
-            InterfaceVehiculo temporalParaOrdenar;
+            ITransportador temporalParaOrdenar;
             for (i = 0; i < this.listaVehiculos.size() - 1; i++)
                 for (j = 0; j < this.listaVehiculos.size() - i - 1; j++)
                     if (this.listaVehiculos.get(j + 1).getKilometros() < this.listaVehiculos.get(j).getKilometros()) {
